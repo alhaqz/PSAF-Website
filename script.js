@@ -1,261 +1,754 @@
-'use strict';
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/logo-psaf.png" />
 
-///////////////////////////////////////
-// Modal window
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title style="size: 100%">PSAF MIPA UI 2021</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/logo psaf tulisan samping.png"
+          alt="PSAF Logo"
+          class="nav__logo"
+          id="logo"
+          designer="Annisa"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Apa itu?</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Filosofi</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Pengurus</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--4">Departemen</a>
+          </li>
+          <!-- <li class="nav__item">
+            <a class="nav__link" href="#section--5">Tugas</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--6">Mentoring</a>
+          </li> -->
+          <li class="nav__item">
+            <a class="nav__link" href="#section--7">Merch</a>
+          </li>
+          <!-- <li class="nav__item">
+            <a class="nav__link" href="#section--8">Tentang kami</a>
+          </li> -->
+        </ul>
+      </nav>
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.btn--close-modal');
-const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+      <div class="header__title">
+        <img src="img/hal1.png" class="header__img" alt="Gambar org" />
+        <div class="kanan">
+          <h1>
+            <span class="highlight">PSAF MIPA UI 2021</span>
+          </h1>
+          <h4 class="biru">Go Further for A Brighter Future!.</h4>
+          <button class="btn--text btn--scroll-to">
+            Lebih lanjut &DownArrow;
+          </button>
+        </div>
+      </div>
+    </header>
 
-const nav = document.querySelector('.nav');
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h3 class="section__description">Apa itu</h3>
+        <h3 class="section__header">PSAF FMIPA UI 2021?</h3>
+      </div>
 
-const openModal = function (e) {
-  e.preventDefault();
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-};
+      <div class="features">
+        <img src="img/gmbr-1.png" alt="Computer" class="features__img" />
+        <div class="features__feature">
+          <p>
+            PSAF MIPA UI 2021 merupakan kepanjangan dari Pengenalan Sistem
+            Akademik Fakultas Matematika dan Ilmu Pengetahuan Alam. PSAF MIPA UI
+            2021 akan membantu mahasiswa baru FMIPA UI untuk mengenal kehidupan
+            kampus secara akademik maupun non akademik dalam menghadapi dunia
+            perkuliahan, serta sebagai sarana untuk mehasiswa baru FMIPA UI
+            untuk dapat mengenal teman seangkatannya dari berbagai jurusan di
+            FMIPA.
+          </p>
+        </div>
+      </div>
 
-const closeModal = function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
+      <div class="features">
+        <div class="features__feature">
+          <h4 class="biru">Visi</h4>
+          <p>
+            Terwujudnya wadah pengenalan FMIPA UI dan pembinaan baik kepada
+            mahasiswa FMIPA UI 2021 serta keluarga PSAF MIPA UI 2021 guna
+            mencapai kebermanfaatan dan kontribusi untuk FMIPA UI, UI, dan
+            Indonesia.
+          </p>
+        </div>
+        <img src="img/gmbr-2.png" alt="Computer" class="features__img kecil" />
+      </div>
 
-btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+      <div class="features">
+        <img src="img/gmbr-3.png" alt="Computer" class="features__img" />
+        <div class="features__feature">
+          <h4 class="biru">Misi</h4>
+          <ul>
+            <li class="tebel">
+              Menjadikan PSAF MIPA UI 2021 sebagai wadah pengenalan lingkungan,
+              sistem, dan kehidupan kampus di FMIPA UI kepada mahasiswa FMIPA UI
+              2021
+            </li>
+            <li class="tebel">
+              Memfasilitasi wadah pembinaan awal bagi mahasiswa FMIPA UI 2021
+              dan pembinaan lanjutan bagi keluarga PSAF MIPA UI 2021.
+            </li>
+            <li class="tebel">
+              Menerapkan nilai-nilai PPM sebagai landasan pembinaan dan
+              menumbuhkan rasa kontribusi mahasiswa di FMIPA UI.
+            </li>
+          </ul>
+        </div>
+        <div class="nilai">
+          <h4 class="biru">Nilai: Komunikatif, Progresif, Kontributif</h4>
+        </div>
+      </div>
+    </section>
 
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Filosofi</h2>
+        <h3 class="section__header">Our values.</h3>
+      </div>
 
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    closeModal();
-  }
-});
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="
+              btn
+              operations__tab operations__tab--1 operations__tab--active
+            "
+            data-tab="1"
+          >
+            Logo
+          </button>
+          <button class="btn operations__tab operations__tab--1" data-tab="2">
+            Tema yang dibawa
+          </button>
+          <button class="btn operations__tab operations__tab--1" data-tab="3">
+            3 Lapisan Biru Hitam
+          </button>
+          <button class="btn operations__tab operations__tab--1" data-tab="4">
+            6 Lingkaran Infinite
+          </button>
+          <button class="btn operations__tab operations__tab--1" data-tab="5">
+            Denah FMIPA UI
+          </button>
+        </div>
+        <div
+          class="
+            operations__content
+            operations__content--1
+            operations__content--active
+          "
+        >
+          <img class="operations__icon" src="img/asset-10.png" />
+          <h5 class="operations__header">
+            Melambangkan FMIPA UI dan Makara FMIPA UI.
+          </h5>
+        </div>
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-const section2 = document.querySelector('#section--2');
+        <div class="operations__content operations__content--2">
+          <img class="operations__icon" src="img/asset-12.png" />
+          <h5 class="operations__header">
+            Infinite ways to discover your dreams.
+          </h5>
+          <p class="operations__header__hore">
+            "FMIPA UI adalah rumah untuk menemukan mimpi-mimpi baru, dengan cara
+            yang tak terbatas untuk menemukan mimpi tersebut"
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <img class="operations__icon" src="img/asset-1.png" />
+          <h5 class="operations__header">
+            Melambangkan FMIPA UI dan Makara FMIPA UI.
+          </h5>
+        </div>
+        <div class="operations__content operations__content--4">
+          <img class="operations__icon__infinite" src="img/asset-9.png" />
+          <h5 class="operations__header">
+            Melambangkan 6 Departemen yang ada di FMIPA UI dan Infinite sebagai
+            simbol menemukan mimpi dengan cara yang tak terbatas.
+          </h5>
+        </div>
+        <div class="operations__content operations__content--5">
+          <img class="operations__icon" src="img/asset-11.png" />
+          <h5 class="operations__header">
+            Melambangkan FMIPA UI sebagai tempat kita bernaung.
+          </h5>
+        </div>
+      </div>
+    </section>
 
-// Button scrolling
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  const s2coords = section2.getBoundingClientRect();
-  console.log(s1coords);
+    <section class="section" id="section--3">
+      <div class="section__title">
+        <h3 class="section__description">Kenali lebih dekat</h3>
+        <h3 class="section__header">STRUKTUR KEPANITIAAN</h3>
+      </div>
+      <div class="features">
+        <div class="row">
+          <div class="column kiri">
+            <img src="img/po.png" alt="Computer" class="features__img" />
+            <h4 class="center jabatan warna1">Ketua Pelaksana</h4>
+            <h4 class="center bold">Rayhan Fadilla</h4>
+            <h4 class="center jabatan warna1">Ilmu Aktuaria 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column kanan2">
+            <img src="img/vpo.png" alt="Computer" class="features__img" />
+            <h4 class="center jabatan warna1">Wakil Ketua Pelaksana</h4>
+            <h4 class="center bold">Sulthan Ali Pasha</h4>
+            <h4 class="center jabatan warna1">Matematika 2019</h4>
+          </div>
+        </div>
 
-  console.log(e.target.getBoundingClientRect());
+        <div class="row">
+          <div class="column">
+            <img src="img/sekum.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Sekretaris Umum</h5>
+            <h5 class="center big" ">Andi Justike M.</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+          <div class="column">
+            <img src="img/bendum.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Bendahara umum</h5>
+            <h5 class="center big"><b>Putri Andini</b></h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+          <div class="column">
+            <img src="img/ko.acara.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Koordinator Acara</h5>
+            <h5 class="center big">Ferina Livya K.</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="img/ko.materi.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Koordinator Materi</h5>
+            <h5 class="center big">Andrew Bony</h5>
+            <h5 class="center warna1">Ilmu Aktuaria 2019</h5>
+          </div>
+          <div class="column">
+            <img
+              src="img/ko.medinfo.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Koordinator Media Informasi</h5>
+            <h5 class="center big">Najma Fakhira N.</h5>
+            <h5 class="center warna1">Biologi 2019</h5>
+          </div>
+          <div class="column">
+            <img
+              src="img/ko.penunjang.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Koordinator Penunjang</h5>
+            <h5 class="center big">Ivan Fathoni</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column2 center">Kesekretariatan</h4>
+          <h4 class="column2 center">Kewirausahaan</h4>
+          <div class="column4">
+            <img
+              src="img/pj kestari.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Rahmah Dzakiyya Z.</h5>
+            <h5 class="center warna1">Geografi 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj kestari.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Jeannifer Venice</h5>
+            <h5 class="center warna1">Kimia 2020</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/pj kewirus.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Khansa Pungkasari</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj kewirus.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Tiara Amalia S.</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column2 center">Acara</h4>
+          <h4 class="column2 center">Master of Ceremony</h4>
+          <div class="column4">
+            <img src="img/pj acara.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Maryam Fildza M.</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj acara.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Raafi Putri R.</h5>
+            <h5 class="center warna1">Statistika 2020</h5>
+          </div>
+          <div class="column4">
+            <img src="img/pj mc.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Sarah Keiza</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+          <div class="column4">
+            <img src="img/wapj mc.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Aulia Lintang S.</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column2 center">Mentor</h4>
+          <h4 class="column2 center">Materi</h4>
+          <div class="column4">
+            <img src="img/pj mentor.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Rachel Bianca T.</h5>
+            <h5 class="center warna1">Biologi 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj mentor.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Ria Fitria</h5>
+            <h5 class="center warna1">Biologi 2019</h5>
+          </div>
+          <div class="column4">
+            <img src="img/pj materi.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Tania Naomi</h5>
+            <h5 class="center warna1">Matematika 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj materi.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Bayu Nugroho</h5>
+            <h5 class="center warna1">Matematika 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column2 center kecil4">Pergerakan Mahasiswa</h4>
+          <h4 class="column2 center">Evaluasi</h4>
+          <div class="column4">
+            <img src="img/pj permas.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Dwight J. O. H.</h5>
+            <h5 class="center warna1">Statistika 2020</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj permas.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Prisalo Luis G.</h5>
+            <h5 class="center warna1">Matematika 2020</h5>
+          </div>
+          <div class="column4">
+            <img src="img/pj panel.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">M. Solaahuddin T.</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj panel.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Ahmad Syarifudin</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column2 center">Humas</h4>
+          <h4 class="column2 center">Logistik</h4>
+          <div class="column4">
+            <img src="img/pj humbup.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Meishinta Putri</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj humpub.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Hana Rufaidah</h5>
+            <h5 class="center warna1">Kimia 2019</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/pj logistik.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Sayyid Arkaan</h5>
+            <h5 class="center warna1">Kimia 2020</h5>
+          </div>
+          <div class="column4">
+            <img
+              src="img/wapj logistik.png"
+              alt="Computer"
+              class="features__img"
+            />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">M. Bian Shafi</h5>
+            <h5 class="center warna1">Kimia 2020</h5>
+          </div>
+        </div>
+        <div class="row">
+          <h4 class="column1 center">Desain Komunikasi Visual</h4>
+          <div class="column3">
+            <img src="img/wapj2 dkv.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">Almas Satria B.</h5>
+            <h5 class="center warna1">Geografi 2020</h5>
+          </div>
+          <div class="column3">
+            <img src="img/pj dkv.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Penanggung Jawab</h5>
+            <h5 class="center big">Annisya Ayu A.</h5>
+            <h5 class="center warna1">Geografi 2020</h5>
+          </div>
+          <div class="column3">
+            <img src="img/wapj1 dkv.png" alt="Computer" class="features__img" />
+            <h5 class="center warna1">Wakil Penanggung Jawab</h5>
+            <h5 class="center big">M. Elham Al Haq</h5>
+            <h5 class="center warna1">Fisika 2019</h5>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
+    <section class="section" id="section--4">
+      <div class="section__title">
+        <h3 class="section__description">Kenali lebih dekat</h3>
+        <h3 class="section__header">DEPARTEMEN</h3>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">MATEMATIKA</h3>
+      </div>
 
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/Logo PDM 2021.PNG" alt="Computer" class="features__img kecil6" />
+          </div>
+          <div class="column2">
+            <img src="img/pdm matematika.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PDM 2021</h5>
+            <h4 class="center kecil7 bold">Veniena Suhrie Hakim</h4>
+            <h4 class="center kecil7">Statistika 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim matematika.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD Matematika 2021</h5>
+            <h4 class="center kecil7 bold">Muhammad Ilyas</h4>
+            <h4 class="center kecil7">Ilmu Aktuaria 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMD Matematika 1.png" alt="Computer" class="features__img hmdm" />
+          </div>
+        </div>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">KIMIA</h3>
+      </div>
 
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/pdk.png" alt="Computer" class="features__img kecil6" />
+          </div>
+          <div class="column2">
+            <img src="img/pdk kimia.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PDK 2021</h5>
+            <h5 class="center kecil7 bold">Kintan Farahdiba Balqis</h5>
+            <h4 class="center kecil7">Kimia 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim kimia.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD Kimia 2021</h5>
+            <h5 class="center kecil7 bold">AR Rasyid Farhandha Putra</h5>
+            <h4 class="center kecil7">Kimia 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMD Kimia 1.png" alt="Computer" class="features__img hmdk" />
+          </div>
+        </div>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">FISIKA</h3>
+      </div>
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  e.preventDefault();
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/pdf.png" alt="Computer" class="features__img pdf" />
+          </div>
+          <div class="column2">
+            <img src="img/pdf fisika.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PDF 2021</h5>
+            <h5 class="center kecil7 bold">Ani Sulistyani</h5>
+            <h4 class="center kecil7">Fisika 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim fisika.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD Fisika 2021</h5>
+            <h5 class="center kecil7 bold">Yudho Ahmad Fahreza</h5>
+            <h4 class="center kecil7">Fisika 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMDF.png" alt="Computer" class="features__img hmdf" />
+          </div>
+        </div>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">BIOLOGI</h3>
+      </div>
 
-  // Matching strategy
-  if (e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href');
-    console.log(id);
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  }
-});
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/pdb.png" alt="Computer" class="features__img kecil6" />
+          </div>
+          <div class="column2">
+            <img src="img/pdb biologi.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PDB 2021</h5>
+            <h5 class="center kecil7 bold">Silvi Angelica</h5>
+            <h4 class="center kecil7">Biologi 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim_biologi.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD Biologi 2021</h5>
+            <h5 class="center kecil7 bold">Arkan Askarillah</h5>
+            <h4 class="center kecil7">Biologi 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMD Biologi 1.png" alt="Computer" class="features__img kecil6" />
+          </div>
+        </div>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">GEOGRAFI</h3>
+      </div>
 
-// Tabbed component
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/psadg.png" alt="Computer" class="features__img psadg" />
+          </div>
+          <div class="column2">
+            <img src="img/psad geografi.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PSADG 2021</h5>
+            <h5 class="center kecil7 bold">Tries Apriliando</h5>
+            <h4 class="center kecil7">Geografi 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim geografi.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD geografi 2021</h5>
+            <h5 class="center kecil7 bold">Muhammad Al Fadio Ummam</h5>
+            <h4 class="center kecil7">Geografi 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMDG 2021.png" alt="Computer" class="features__img hmdg" />
+          </div>
+        </div>
+      </div>
+      <div class="section__title">
+        <h3 class="section__header center space">GEOSAINS</h3>
+      </div>
 
-tabsContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.operations__tab');
-  console.log(clicked);
+      <div class="features">
+        <div class="row">
+          <div class="column2">
+            <img src="img/Logo PSADGs.png" alt="Computer" class="features__img kecil6" />
+          </div>
+          <div class="column2">
+            <img src="img/ketua psdgs_geofisika.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Project Officer PDGS 2021</h5>
+            <h5 class="center kecil7 bold">Muhammad Faisal Abdulhaq</h5>
+            <h4 class="center kecil7">Geologi 2019</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column2">
+            <img src="img/kahim geologi.png" alt="Computer" class="features__img" />
+            <h5 class="center kecil8">Ketua HMD Geosains 2021</h5>
+            <h5 class="center kecil7 bold">Abdurrahman Ihsan</h5>
+            <h4 class="center kecil7">Geologi 2019</h4>
+          </div>
+          <div class="column2">
+            <img src="img/Logo HMD Geosains 1.png" alt="Computer" class="features__img hmgs" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  // Guard clause
-  if (!clicked) return;
+    <section class="section" id="section--7">
+      <div class="section__title section__title--testimonials">
+        <h4 class="section__header bold">
+          Baju Angkatan 2021 dan Totebag PSAF 2021
+        </h4><br>
+        <h5 class="kecil7 justify">
+          Halo mahasiswa FMIPA UI 2021. Kalian tahu tidak sih kalau setiap angkatan itu memiliki baju angkatan sendiri? Baju angkatan ini hanya diproduksi pada saat KaMaBa saja. Tahun ini PSAF MIPA UI 2021 menyediakan dua pilihan warna untuk baju angkatan yaitu hitam dan putih. Nah, baju angkatan ini biasa dipakai saat acara-acara angkatan dan merupakan ciri khas setiap angkatan. Selain itu, ada juga totebag yang bisa kalian pakai untuk kuliah maupun berpergian. Pemesanan dapat melalui link <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSezPfZfaPGD0psEU_l1eIQOvpCdMzkfhJH3b8gxJRkEN3pmcA/viewform"
+          >PESAN SEKARANG.</a
+        >
+        </h5>
+      </div>
 
-  // remove active classes
-  tabs.forEach(t => t.classList.remove('operations__tab--active'));
-  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <img src="img/baju-1.png" class="kaos" />
+          </div>
+        </div>
 
-  // Activate tab
-  clicked.classList.add('operations__tab--active');
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <div class="testimonial">
+              <img src="img/baju-2.png" class="kaos" />
+            </div>
+          </div>
+        </div>
 
-  // Activate content area
-  document
-    .querySelector(`.operations__content--${clicked.dataset.tab}`)
-    .classList.add('operations__content--active');
-});
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <div class="testimonial">
+              <img src="img/totebag-1.png" class="kaos" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="slide slide--4">
+          <div class="testimonial">
+            <div class="testimonial">
+              <img src="img/baju-4.png" class="kaos" />
+            </div>
+          </div>
+        </div>
 
-// Menu fade animation
-const handleHover = function (e) {
-  const link = e.target;
-  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-  const logo = link.closest('.nav').querySelector('img');
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
 
-  siblings.forEach(el => {
-    if (el !== link) el.style.opacity = this;
-  });
-  logo.style.opacity = this;
-};
+    <footer class="footer">
+      <!-- <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Pricing</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Careers</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul> -->
+      <img src="img/logobem.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; 2021 PSAF MIPA UI. Powered by
+        <a
+          class="footer__link twitter-link"
+          target="_blank"
+          href="https://www.linkedin.com/in/alhaqz/"
+          >Elham Al Haq</a
+        >.
+      </p>
+    </footer>
 
-// Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>>
+    </div>
+    <div class="overlay hidden"></div>
 
-const header = document.querySelector('.header');
-const navHeight = nav.getBoundingClientRect().height;
-
-const stickyNav = function (entries) {
-  const [entry] = entries;
-  // console.log(entry);
-
-  if (!entry.isIntersecting) nav.classList.add('sticky');
-  else nav.classList.remove('sticky');
-};
-
-const headerObserver = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0,
-  rootMargin: `-${navHeight}px`,
-});
-headerObserver.observe(header);
-
-// Reveal sections
-const allSection = document.querySelectorAll('.section');
-
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-  // console.log(entry);
-
-  if (!entry.isIntersecting) return;
-  entry.target.classList.remove('section--hidden');
-  observer.unobserve(entry.target);
-};
-
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
-allSection.forEach(function (section) {
-  sectionObserver.observe(section);
-  // section.classList.add('section--hidden');
-});
-
-// lazy loading images
-const imgTargets = document.querySelectorAll('img[data-src]');
-
-const loadImg = function (entries, observer) {
-  const [entry] = entries;
-  // console.log(entry);
-
-  if (!entry.isIntersecting) return;
-
-  // Replace src with data-src
-  entry.target.src = entry.target.dataset.src;
-
-  entry.target.addEventListener('load', function () {
-    entry.target.classList.remove('lazy-img');
-  });
-};
-
-const imgObserver = new IntersectionObserver(loadImg, {
-  root: null,
-  threshold: 0,
-  rootMargin: '200px',
-});
-
-imgTargets.forEach(img => imgObserver.observe(img));
-
-// Slider
-const slider = function () {
-  const slides = document.querySelectorAll('.slide');
-  const btnLeft = document.querySelector('.slider__btn--left');
-  const btnRight = document.querySelector('.slider__btn--right');
-  const dotContainer = document.querySelector('.dots');
-
-  let curSlide = 0;
-  const maxSlide = slides.length;
-
-  // Functions
-  const createDots = function () {
-    slides.forEach(function (_, i) {
-      dotContainer.insertAdjacentHTML(
-        'beforeend',
-        `<button class="dots__dot" data-slide="${i}"></button>`
-      );
-    });
-  };
-
-  const activateDot = function (slide) {
-    document
-      .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
-
-    document
-      .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add('dots__dot--active');
-  };
-
-  const goToSlide = function (slide) {
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-    );
-  };
-
-  // Next slide
-  const nextSlide = function () {
-    if (curSlide === maxSlide - 1) {
-      curSlide = 0;
-    } else {
-      curSlide++;
-    }
-
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  };
-
-  const prevSlide = function () {
-    if (curSlide === 0) {
-      curSlide = maxSlide - 1;
-    } else {
-      curSlide--;
-    }
-
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  };
-
-  const init = function () {
-    createDots();
-    activateDot(0);
-    goToSlide(0);
-  };
-
-  init();
-
-  // Event handlers
-  btnRight.addEventListener('click', nextSlide);
-  btnLeft.addEventListener('click', prevSlide);
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key == 'ArrowLeft') {
-      prevSlide();
-    }
-    e.key === 'ArrowRight' && nextSlide();
-  });
-
-  dotContainer.addEventListener('click', function (e) {
-    if (e.target.classList.contains('dots__dot')) {
-      const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activateDot(slide);
-    }
-  });
-};
-
-slider();
+    <script src="script.js"></script>
+  </body>
+</html>
