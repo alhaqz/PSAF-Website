@@ -144,9 +144,9 @@ img {
 /* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
-  /* background-color: #f3ec78; */
+  background-color: white;
 
-  background-image: url(img/Group_6.png);
+/*   background-image: url(img/Group_6.png); */
 }
 
 .nav__logo {
